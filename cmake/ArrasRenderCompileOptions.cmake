@@ -41,7 +41,7 @@ function(ArrasRender_cxx_compile_options target)
             PRIVATE
                 -march=core-avx2                # Specify the name of the target architecture
                 -fdelayed-template-parsing      # Shader.h has a template method that uses a moonray class which is no available to scene_rdl2 and is only used in moonray+
-                -Wno-deprecated-declarations    # disable auto_ptr deprecated warnings from log4cplus-1.
+                /W3    # disable auto_ptr deprecated warnings from log4cplus-1.
                 -Wno-unused-value               # caused by opt-debug build and MNRY_VERIFY.
         )
     elseif (CMAKE_CXX_COMPILER_ID STREQUAL Intel)
